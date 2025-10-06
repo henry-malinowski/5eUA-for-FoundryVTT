@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>5eUA for FoundryVTT</title>
+</head>
+<body>
+    <header>
+        <h1>5eUA for FoundryVTT</h1>
+    </header>
+    <p>FoundryVTT modules for playtesting Unearthed Arcana.</p>
+
+    <h2>Released Modules</h2>
+    <ul>
+        <li>
+            <a href="https://github.com/henry-malinowski/ua2025-the-psion" target="_blank" rel="noopener">ua2025-the-psion</a>
+            <button data-url="https://raw.githubusercontent.com/henry-malinowski/ua2025-the-psion/master/module.json">Copy manifest URL</button>
+        </li>
+        <li>
+            <a href="https://github.com/henry-malinowski/UA2025-ArcaneSubclasses" target="_blank" rel="noopener">UA2025-ArcaneSubclasses</a>
+            <button data-url="https://raw.githubusercontent.com/henry-malinowski/UA2025-ArcaneSubclasses/master/module.json">Copy manifest URL</button>
+        </li>
+        <li>
+            <a href="https://github.com/henry-malinowski/UA2025-RealmsSubclasses" target="_blank" rel="noopener">UA2025-RealmsSubclasses</a>
+            <button data-url="https://raw.githubusercontent.com/henry-malinowski/UA2025-RealmsSubclasses/master/module.json">Copy manifest URL</button>
+        </li>
+        <li>
+            <a href="https://github.com/henry-malinowski/UA2025-ApocalypticSubclasses" target="_blank" rel="noopener">UA2025-ApocalypticSubclasses</a>
+            <button data-url="https://raw.githubusercontent.com/henry-malinowski/UA2025-ApocalypticSubclasses/refs/heads/main/module.json">Copy manifest URL</button>
+        </li>
+    </ul>
+
+    <script>
+        document.addEventListener('click', function(e){
+            if(e.target.tagName === 'BUTTON' && e.target.dataset.url){
+                const url = e.target.dataset.url;
+                navigator.clipboard.writeText(url).then(function(){
+                    const old = e.target.textContent;
+                    e.target.textContent = 'Copied!';
+                    setTimeout(()=> e.target.textContent = old, 1500);
+                }).catch(function(){
+                    alert('Copy failed. URL:\n' + url);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
