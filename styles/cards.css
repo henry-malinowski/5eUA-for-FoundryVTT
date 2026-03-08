@@ -1,0 +1,100 @@
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.module-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  opacity: 0;
+  animation: fadeUp 0.55s ease forwards;
+
+  &:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 0 6px var(--gold-dim);
+
+    .card-dim {
+      opacity: 0.55;
+    }
+
+    .card-img img {
+      filter: brightness(1);
+      transform: scale(1.06);
+    }
+  }
+}
+
+.card-img {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-deep);
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85);
+    transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.card-img-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--fallback-gradient-start), var(--fallback-gradient-end));
+  color: var(--border);
+  font-size: 2.2rem;
+}
+
+.card-dim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(11, 10, 19, 0.6) 0%, transparent 55%);
+  opacity: 0.25;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.card-version-badge {
+  font-family: 'Signika', 'Palatino Linotype', sans-serif;
+  font-size: 0.77rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  flex-shrink: 0;
+
+  i {
+    font-size: 0.8em;
+  }
+}
+
+.card-body {
+  flex: 1;
+  padding: 1.1rem 1.2rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.card-name {
+  font-family: 'Modesto Condensed', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-head);
+  line-height: 1.3;
+}

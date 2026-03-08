@@ -1,0 +1,31 @@
+{
+  "id": "https://henry-malinowski.github.io/5eUA-for-FoundryVTT/",
+  "name": "5eUA for FoundryVTT",
+  "short_name": "5eUA",
+  "description": "Community FoundryVTT modules for D&D 5e Unearthed Arcana playtest content.",
+  "lang": "en-US",
+  "start_url": "https://henry-malinowski.github.io/5eUA-for-FoundryVTT/",
+  "icons": [
+    { "src": "images/favicons/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/favicons/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#0b0a13",
+  "background_color": "#0b0a13",
+  "screenshots": [
+    {
+      "src": "images/favicons/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "5eUA module listing"
+    },
+    {
+      "src": "images/favicons/screenshot-narrow.jpg",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "5eUA module listing"
+    }
+  ],
+  "display": "browser"
+}

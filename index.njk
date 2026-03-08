@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>5eUA for FoundryVTT</title>
+  <link rel="icon" href="images/favicons/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0b0a13">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════ HEADER ═══════════════════════════════════════════ -->
+<header class="site-header">
+  <h1 class="site-title">5eUA for FoundryVTT</h1>
+</header>
+<!-- ═══════════════════ MAIN ══════════════════════════════════════════════ -->
+<main>
+  <div class="site-intro">
+    {{ intro | safe }}
+  </div>
+
+  <div class="card-grid" id="card-grid">
+    {% for mod in modules %}
+    <article class="module-card" style="animation-delay: {{ loop.index0 * 0.05 + 0.42 }}s" data-index="{{ loop.index0 }}">
+      <div class="card-img">
+        {% if mod.thumbnail or mod.image %}
+        <img src="{{ mod.thumbnail or mod.image }}" alt="{{ mod.name }}" loading="lazy">
+        {% else %}
+        <div class="card-img-fallback"><i class="fa-solid fa-image"></i></div>
+        {% endif %}
+        <div class="card-dim"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-name">{{ mod.name }}</div>
+        <span class="card-version-badge"><i class="fa-solid fa-code-branch"></i> {{ mod.version }}</span>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</main>
+
+<!-- ═══════════════════ FOOTER ════════════════════════════════════════════ -->
+<footer class="site-footer">
+  <div>
+    Community modules by <a href="https://github.com/henry-malinowski" target="_blank" rel="noopener">Henry Malinowski</a>.
+    Not affiliated with Wizards of the Coast or Foundry Gaming, LLC.
+  </div>
+  <i class="fa-solid fa-diamond footer-gem"></i>
+  <div>
+    Unearthed Arcana materials are property of Wizards of the Coast and provided soley for playtesting and historical purposes. 
+		Use of the <a href="https://www.foundryvtt.store/products/dnd-players-handbook" target="_blank" rel="noopener">official Player's Handbook module</a> is required for use of the UA content.
+  </div>
+</footer>
+
+<!-- ═══════════════════ MODAL ═════════════════════════════════════════════ -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <button class="modal-nav modal-nav-prev" id="modal-nav-prev" aria-label="Previous module">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button class="modal-nav modal-nav-next" id="modal-nav-next" aria-label="Next module">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <div class="modal" id="modal">
+    <div class="modal-close-bar">
+      <button class="modal-close" id="modal-close" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="modal-scroll">
+      <div class="modal-inner">
+        <div class="modal-title-row">
+          <h2 class="modal-title" id="modal-title"></h2>
+          <div class="modal-link-btns" id="modal-link-btns"></div>
+        </div>
+        <div class="modal-hero" id="modal-hero"></div>
+        <div class="modal-body">
+          <div class="modal-sec">Included Content</div>
+          <div class="packs-grid" id="modal-packs"></div>
+          <div id="modal-note"></div>
+          <div class="modal-description" id="modal-description" hidden></div>
+          <div class="modal-sec">Module Manifest</div>
+          <div class="json-block">
+            <input class="json-input" id="modal-json" type="text" readonly spellcheck="false">
+            <button class="copy-btn" id="copy-btn">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copy</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ LIGHTBOX ══════════════════════════════════════════ -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close preview">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <div class="lightbox-inner" id="lightbox-inner">
+    <img class="lightbox-img" id="lightbox-img" alt="">
+    <div class="lightbox-caption" id="lightbox-caption">
+      <div class="lightbox-heading" id="lightbox-heading"></div>
+      <div class="lightbox-desc" id="lightbox-desc"></div>
+    </div>
+  </div>
+</div>
+
+<script id="modules-data" type="application/json">{{ modules | dump | safe }}</script>
+<script type="module" src="scripts/app.js"></script>
+</body>
+</html>
