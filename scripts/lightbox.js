@@ -1,5 +1,6 @@
 export function createLightboxController() {
   const lightboxEl = document.getElementById('lightbox');
+  const lightboxScroll = document.getElementById('lightbox-scroll');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxCaption = document.getElementById('lightbox-caption');
   const lightboxHeading = document.getElementById('lightbox-heading');
@@ -11,8 +12,20 @@ export function createLightboxController() {
 
   let shots = [];
   let index = 0;
+  let zoomed = false;
+
+  function exitZoom() {
+    zoomed = false;
+    lightboxEl.classList.remove('lightbox--zoomed');
+  }
+
+  function enterZoom() {
+    zoomed = true;
+    lightboxEl.classList.add('lightbox--zoomed');
+  }
 
   function render() {
+    exitZoom();
     const shot = shots[index];
     if (!shot) return;
     lightboxImg.src = shot.path;
@@ -33,6 +46,7 @@ export function createLightboxController() {
   }
 
   function close() {
+    exitZoom();
     lightboxEl.hidden = true;
     lightboxImg.src = '';
   }
@@ -52,6 +66,16 @@ export function createLightboxController() {
     if (next && next.path) (new Image()).src = next.path;
   }
 
+  lightboxImg.addEventListener('click', function (e) {
+    e.stopPropagation();
+    zoomed ? exitZoom() : enterZoom();
+  });
+  lightboxScroll.addEventListener('click', function (e) {
+    if (zoomed) {
+      exitZoom();
+      e.stopPropagation();
+    }
+  });
   lightboxClose.addEventListener('click', function (e) {
     e.stopPropagation();
     close();
@@ -76,7 +100,9 @@ export function createLightboxController() {
   lightboxNext.addEventListener('click', function (e) {
     e.stopPropagation();
   });
-  lightboxEl.addEventListener('click', close);
+  lightboxEl.addEventListener('click', function () {
+    zoomed ? exitZoom() : close();
+  });
   lightboxInner.addEventListener('click', function (e) {
     e.stopPropagation();
   });
