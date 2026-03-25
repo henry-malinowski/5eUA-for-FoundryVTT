@@ -2,7 +2,7 @@
 id: UA2025-ArcaneSubclasses
 name: Arcane Subclasses
 fullTitle: "UA2025: Arcane Subclasses"
-version: v2.0.0
+version: v3.0.0
 image: images/ua2025-arcane-subclasses/hero.webp
 thumbnail: images/ua2025-arcane-subclasses/thumb.webp
 imageCredit:
@@ -23,6 +23,14 @@ pdfLinks:
 ytLinks:
   - label: View Release Video
     url: https://www.youtube.com/watch?v=agn0e3JL3EU
+		screenshots:
+  - path: images/ua2025-arcane-subclasses/example_2.webp
+    heading: Compendium integration
+  - path: images/ua2025-arcane-subclasses/example_3.webp
+    heading: Journal Integration
+    description: Read all the UA subclasses along with design notes
+  - path: images/ua2025-arcane-subclasses/example_1.webp
+    heading: Beautify compendium packs
 packs:
   - label: Arcane Subclasses UA Documents
     type: JournalEntry
@@ -36,12 +44,13 @@ packs:
 - Foundry use notes to aid in correctly using features.
 
 ## Subclasses
+
 - Arcana Domain (Cleric)
 - Arcane Archer (Fighter)
 - Tattooed Warrior (Monk)
 - Ancestral Sorcery (Sorcerer)
 - Hexblade Patron (Warlock)
 - Conjurer (Wizard)
-- Enchaanter (Wizard)
+- Enchanter (Wizard)
 - Necromancer (Wizard)
 - Transmuter (Wizard)
