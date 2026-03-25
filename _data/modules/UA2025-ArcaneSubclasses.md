@@ -9,7 +9,7 @@ imageCredit:
   title: "An aasimar Wizard uses a crystal material component to focus the magic of Cone of Cold"
   artist: Martina Fačková
 githubUrl: https://github.com/henry-malinowski/UA2025-ArcaneSubclasses
-manifestUrl: https://raw.githubusercontent.com/henry-malinowski/UA2025-ArcaneSubclasses/master/module.json
+manifestUrl: https://github.com/henry-malinowski/UA2025-ArcaneSubclasses/releases/latest/download/module.json
 dndBeyondLinks:
   - label: Arcane Subclasses
     url: https://www.dndbeyond.com/sources/dnd/ua/arcane-subclasses
