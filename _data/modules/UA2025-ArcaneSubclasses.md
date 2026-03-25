@@ -30,7 +30,7 @@ ytLinks:
     heading: Journal Integration
     description: Read all the UA subclasses along with design notes
   - path: images/ua2025-arcane-subclasses/example_1.webp
-    heading: Beautify compendium packs
+    heading: Beautiful compendium packs
 packs:
   - label: Arcane Subclasses UA Documents
     type: JournalEntry
