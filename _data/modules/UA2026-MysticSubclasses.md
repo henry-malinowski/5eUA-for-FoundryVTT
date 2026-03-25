@@ -2,7 +2,7 @@
 id: UA2026-MysticSubclasses
 name: Mystic Subclasses
 fullTitle: "UA2026: Mystic Subclasses"
-version: v1.0.0
+version: v1.0.1
 image: images/ua2026-mystic-subclasses/hero.webp
 thumbnail: images/ua2026-mystic-subclasses/thumb.webp
 imageCredit:
