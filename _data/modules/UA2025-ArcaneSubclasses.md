@@ -23,7 +23,7 @@ pdfLinks:
 ytLinks:
   - label: View Release Video
     url: https://www.youtube.com/watch?v=agn0e3JL3EU
-		screenshots:
+screenshots:
   - path: images/ua2025-arcane-subclasses/example_2.webp
     heading: Compendium integration
   - path: images/ua2025-arcane-subclasses/example_3.webp
