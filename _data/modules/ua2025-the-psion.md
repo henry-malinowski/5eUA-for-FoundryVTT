@@ -2,14 +2,14 @@
 id: ua2025-the-psion
 name: The Psion
 fullTitle: "UA2025: The Psion"
-version: v2.0.1
+version: v2.1.0
 image: images/ua2025-the-psion/hero.webp
 thumbnail: images/ua2025-the-psion/thumb.webp
 imageCredit:
   title: "Mind Sliver (TCoE)"
   artist: Andrew Mar
 githubUrl: https://github.com/henry-malinowski/ua2025-the-psion
-manifestUrl: https://raw.githubusercontent.com/henry-malinowski/ua2025-the-psion/master/module.json
+manifestUrl: https://github.com/henry-malinowski/ua2025-the-psion/releases/latest/download/module.json
 dndBeyondLinks:
   - label: The Psion
     url: https://www.dndbeyond.com/sources/dnd/ua/the-psion
