@@ -2,7 +2,7 @@
 id: UA2025-HorrorSubclasses
 name: Horror Subclasses
 fullTitle: "UA2025: Horror Subclasses"
-version: v1.0.1
+version: v2.0.0
 image: images/ua2025-horror-subclasses/hero.webp
 thumbnail: images/ua2025-horror-subclasses/thumb.webp
 imageCredit:
@@ -42,5 +42,16 @@ packs:
 ## Features
 
 - Full class and subclass integration in the FoundryVTT compendium system including subclass spell lists.
-- Support for all combinations of the scaling Reanimated Companion stat block (Requires the Artificier from a source such as the [Tasha's module](https://www.foundryvtt.store/products/dnd-tashas-cauldron))
+- Support for all combinations of the scaling Reanimated Companion stat block (Requires the Artificier from a source such as the [Eberron: Forge of the Artificer](https://foundryvtt.com/packages/dnd-forge-artificer) or [Tasha's Cauldron of Everything](https://foundryvtt.com/packages/dnd-tashas-cauldron)) module.
 - Scaling Spirits from Beyond table integrated and well as double rolling at level 14
+
+### Subclasses
+
+- Reanimator (Artificier) [Requires Artificer Source]
+- College of Spirits (Bard)
+- Grave Domain (Cleric)
+- Hollow Warden (Ranger)
+- Phantom (Rogue)
+- Shadow Sorcery (Sorcerer)
+- Hexblade Patron (Warlock)
+- Undead Patron (Warlock)
