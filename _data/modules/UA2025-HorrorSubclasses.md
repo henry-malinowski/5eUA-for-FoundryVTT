@@ -42,10 +42,10 @@ packs:
 ## Features
 
 - Full class and subclass integration in the FoundryVTT compendium system including subclass spell lists.
-- Support for all combinations of the scaling Reanimated Companion stat block (Requires the Artificier from a source such as the [Eberron: Forge of the Artificer](https://foundryvtt.com/packages/dnd-forge-artificer) or [Tasha's Cauldron of Everything](https://foundryvtt.com/packages/dnd-tashas-cauldron)) module.
+- Support for all combinations of the scaling Reanimated Companion stat block (Requires the Artificier from a source module such as the [Eberron: Forge of the Artificer](https://foundryvtt.com/packages/dnd-forge-artificer) or [Tasha's Cauldron of Everything](https://foundryvtt.com/packages/dnd-tashas-cauldron)).
 - Scaling Spirits from Beyond table integrated and well as double rolling at level 14
 
-### Subclasses
+## Subclasses
 
 - Reanimator (Artificier) [Requires Artificer Source]
 - College of Spirits (Bard)
