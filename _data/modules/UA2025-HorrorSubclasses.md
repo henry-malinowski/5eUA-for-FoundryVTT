@@ -9,7 +9,7 @@ imageCredit:
   title: "A tiefling Cleric casts Dispel Evil and Good to expel an evil spirit from a possessed innocent"
   artist: Javier Charro
 githubUrl: https://github.com/henry-malinowski/UA2025-HorrorSubclasses
-manifestUrl: https://raw.githubusercontent.com/henry-malinowski/UA2025-HorrorSubclasses/refs/heads/main/module.json
+manifestUrl: https://github.com/henry-malinowski/UA2025-HorrorSubclasses/releases/latest/download/module.json
 dndBeyondLinks:
   - label: View on D&D Beyond
     url: https://www.dndbeyond.com/sources/dnd/ua/horror-subclasses
