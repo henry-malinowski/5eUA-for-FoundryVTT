@@ -1,15 +1,15 @@
 ---
-id: UA2025-VillainousOptions
+id: UA2026-VillainousOptions
 name: Villainous Options
 fullTitle: "UA2026: Villainous Options"
 version: v1.0.0 (coming soon)
 image: images/ua2026-villainous-options/hero.webp
-thumbnail: images/ua2025-horror-subclasses/thumb.webp
+thumbnail: images/ua2026-villainous-options/thumb.webp
 imageCredit:
   title: "An ancient lich and her ghast gravecaller attendants warp reality with forbidden magic"
   artist: Viko Menezes
-githubUrl: https://github.com/henry-malinowski/UA2025-VillainousOptions
-manifestUrl: https://github.com/henry-malinowski/UA2025-VillainousOptions/releases/latest/download/module.json
+githubUrl: https://github.com/henry-malinowski/UA202-VillainousOptions
+manifestUrl: https://github.com/henry-malinowski/UA2026-VillainousOptions/releases/latest/download/module.json
 dndBeyondLinks:
   - label: View on D&D Beyond
     url: https://www.dndbeyond.com/posts/2150-designer-insights-from-unearthed-arcana-villainous
