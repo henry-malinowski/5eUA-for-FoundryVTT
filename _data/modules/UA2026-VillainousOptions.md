@@ -2,7 +2,7 @@
 id: UA2026-VillainousOptions
 name: Villainous Options
 fullTitle: "UA2026: Villainous Options"
-version: v1.0.0 (coming soon)
+version: coming soon...
 image: images/ua2026-villainous-options/hero.webp
 thumbnail: images/ua2026-villainous-options/thumb.webp
 imageCredit:
