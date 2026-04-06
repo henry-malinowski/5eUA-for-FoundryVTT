@@ -11,6 +11,7 @@ const ORDER = [
   'UA2025-HorrorSubclasses',
   'UA2025-SubclassUpdates',
 	'UA2026-MysticSubclasses',
+	'UA2026-VillainousOptions',
 ];
 
 module.exports = function () {
