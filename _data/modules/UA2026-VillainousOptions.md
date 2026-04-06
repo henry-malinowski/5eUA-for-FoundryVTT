@@ -38,3 +38,19 @@ packs:
 - Druid (Circle of the Titan)
 - Fighter (Hell Knight)
 - Sorcerer (Demonic Sorcery)
+
+## Feats
+
+- Path of the Death Knight
+  - Death Knight Initiate
+	- Dread Authority
+	- Harbinger of Doom
+	- Deathly Presence
+	- Unholy Steed
+	- Death Knight Ascension
+- Path of the Lich
+  - Lich Initiate
+	- Arcane Restoration
+	- Transfer Life
+	- Undead Grasp
+	- Lich Ascension
