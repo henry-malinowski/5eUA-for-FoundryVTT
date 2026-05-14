@@ -18,18 +18,29 @@
 
 /* Modal shell */
 .modal {
+  position: relative;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-top: 2px solid var(--gold-dim);
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 780px;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-  animation: modalIn 0.3s cubic-bezier(0.34, 1.4, 0.64, 1) both;
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(238, 155, 58, 0.05);
+  animation: modalIn 0.24s cubic-bezier(0.22, 1, 0.36, 1) both;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(238, 155, 58, 0.015);
   overflow: hidden;
+}
+
+.modal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold-dim);
+  opacity: 0.82;
+  pointer-events: none;
 }
 
 .modal-close-bar {
@@ -60,6 +71,7 @@
 }
 
 .modal-scroll {
+  position: relative;
   overflow-y: auto;
   flex: 1;
   scrollbar-width: thin;
@@ -77,6 +89,26 @@
     background: var(--color-scrollbar);
     border-radius: 99px;
   }
+}
+
+.modal-scroll::after {
+  content: '';
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  height: 2.3rem;
+  margin-top: -2.3rem;
+  background: linear-gradient(0deg, rgba(24, 20, 31, 0.98), rgba(24, 20, 31, 0));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.modal.has-scroll-below .modal-scroll::after {
+  opacity: 1;
 }
 
 .modal-inner {
@@ -460,6 +492,7 @@
 }
 
 .copy-btn {
+  flex: 0 0 5.15rem;
   background: var(--surface-3);
   border: 1px solid var(--border-gold);
   border-radius: 5px;
@@ -468,10 +501,12 @@
   padding: 0.35rem 0.6rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
   font-size: 0.7rem;
   font-family: 'Signika', sans-serif;
-  transition: all var(--transition);
+  white-space: nowrap;
+  transition: background var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 
   &:hover {
     border-color: var(--gold-dim);
@@ -479,8 +514,37 @@
   }
 
   &.copied {
+    background: rgba(92, 184, 92, 0.08);
     border-color: var(--success-border);
     color: var(--success-text);
+    box-shadow: 0 0 0 1px rgba(92, 184, 92, 0.08), 0 0 16px rgba(92, 184, 92, 0.08);
+    animation: copyConfirm 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  &.copied i {
+    animation: copyIconConfirm 0.34s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes copyConfirm {
+  from {
+    transform: translateY(1px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes copyIconConfirm {
+  from {
+    opacity: 0.45;
+    transform: scale(0.72);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

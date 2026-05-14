@@ -11,6 +11,7 @@ export function createModalController(options) {
 
   const backdrop = document.getElementById('modal-backdrop');
   const modalEl = document.getElementById('modal');
+  const modalScroll = modalEl.querySelector('.modal-scroll');
   const modalTitle = document.getElementById('modal-title');
   const modalHero = document.getElementById('modal-hero');
   const modalPacks = document.getElementById('modal-packs');
@@ -35,7 +36,8 @@ export function createModalController(options) {
 
     modalHero.innerHTML = '';
     if (mod.image) {
-      modalHero.appendChild(makeImgEl(mod.image, mod.name, 'modal-hero-fallback'));
+      const heroAlt = mod.imageCredit && mod.imageCredit.title ? mod.imageCredit.title : mod.name;
+      modalHero.appendChild(makeImgEl(mod.image, heroAlt, 'modal-hero-fallback'));
     } else {
       const fallback = document.createElement('div');
       fallback.className = 'modal-hero-fallback';
@@ -44,7 +46,7 @@ export function createModalController(options) {
     }
 
     if (mod.imageCredit) {
-      const credit = document.createElement('div');
+      const credit = document.createElement('figcaption');
       credit.className = 'modal-hero-credit';
       const imageCredit = mod.imageCredit;
       const parts = [];
@@ -118,13 +120,15 @@ export function createModalController(options) {
     history.replaceState(null, '', '#' + mod.id);
     backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
-    modalEl.querySelector('.modal-scroll').scrollTop = 0;
+    modalScroll.scrollTop = 0;
+    requestAnimationFrame(updateModalScrollState);
   }
 
   function closeModal() {
     history.replaceState(null, '', location.pathname + location.search);
     backdrop.classList.remove('open');
     document.body.style.overflow = '';
+    modalEl.classList.remove('is-scrollable', 'has-scroll-below');
   }
 
   function stepModal(delta) {
@@ -145,6 +149,15 @@ export function createModalController(options) {
   function prefetchCardImage(index) {
     const mod = modules[index];
     if (mod && mod.image) (new Image()).src = mod.image;
+  }
+
+  function updateModalScrollState() {
+    const scrollMax = modalScroll.scrollHeight - modalScroll.clientHeight;
+    const isScrollable = scrollMax > 1;
+    const hasScrollBelow = isScrollable && modalScroll.scrollTop < scrollMax - 1;
+
+    modalEl.classList.toggle('is-scrollable', isScrollable);
+    modalEl.classList.toggle('has-scroll-below', hasScrollBelow);
   }
 
   function initCopyButton() {
@@ -174,6 +187,18 @@ export function createModalController(options) {
           // No-op fallback failure.
         }
       }
+    });
+  }
+
+  function initManifestInputSelection() {
+    function selectManifestUrl() {
+      modalJson.select();
+    }
+
+    modalJson.addEventListener('focus', selectManifestUrl);
+    modalJson.addEventListener('click', selectManifestUrl);
+    modalJson.addEventListener('mouseup', function (e) {
+      e.preventDefault();
     });
   }
 
@@ -214,8 +239,11 @@ export function createModalController(options) {
   backdrop.addEventListener('click', function (e) {
     if (e.target === backdrop) closeModal();
   });
+  modalScroll.addEventListener('scroll', updateModalScrollState);
+  window.addEventListener('resize', updateModalScrollState);
   backdrop.addEventListener('mousemove', prefetchNearNavButtons);
   initCopyButton();
+  initManifestInputSelection();
 
   return {
     backdrop,
