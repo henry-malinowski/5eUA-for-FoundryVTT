@@ -1,6 +1,6 @@
 ---
 
-Bring the power and magic of Unearthed Arcana to your Foundry table. Across these modules you'll find...
+Bring 5.5e's Unearthed Arcana playtest options to your Foundry table
 
 ---
 
