@@ -62,7 +62,6 @@ body {
   padding: 3.75rem 1.5rem 0;
   text-align: center;
   overflow: hidden;
-  animation: fadeUp 0.7s ease both;
 
   &::after {
     content: '';
@@ -98,7 +97,6 @@ body {
   gap: 0.8rem;
   max-width: 280px;
   margin: 1.25rem auto;
-  animation: fadeUp 0.7s 0.3s ease both;
 
   &::before,
   &::after {
@@ -131,6 +129,14 @@ main {
   text-align: center;
   color: var(--text-dim);
   font-size: 0.88rem;
+
+  p,
+  li,
+  .ornament {
+    opacity: 0;
+    animation: fadeUp 0.26s ease forwards;
+    animation-delay: calc(var(--intro-order) * 0.035s);
+  }
 
   p {
     line-height: 1.75;

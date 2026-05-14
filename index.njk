@@ -26,7 +26,7 @@
 
   <div class="card-grid" id="card-grid">
     {% for mod in modules %}
-    <article class="module-card" style="animation-delay: {{ loop.index0 * 0.05 + 0.42 }}s" data-index="{{ loop.index0 }}">
+    <article class="module-card" style="animation-delay: {{ loop.index0 * 50 + 420 }}ms" data-index="{{ loop.index0 }}">
       <div class="card-img">
         {% if mod.thumbnail or mod.image %}
         <img src="{{ mod.thumbnail or mod.image }}" alt="{{ mod.name }}" loading="lazy">
