@@ -50,9 +50,7 @@ packs:
 - Demonic Sorcery (Sorcerer)
 - Primordial Patron (Warlock)
 
-## Feats
-
-### Path of Villainy Feats
+## Path of Villainy Feats
 
 - Path of the Death Knight
   - Death Knight Initiate
@@ -68,13 +66,13 @@ packs:
 	- Undead Grasp
 	- Lich Ascension
 
-### Origin Feats
+## Origin Feats
 
 - Atoner's Grace
 - Raised by Cultists
 - Trapper
 
-### Epic Boon Feats
+## Epic Boon Feats
 
 - Boon of the Bandit King
 - Boon of the Cleansed Heart
